@@ -5,8 +5,9 @@ This tool was created as an extension of Shatter version 0.3, effectively we jus
 Code only tested on Ubuntu 20.04.2 LTS, python 3.8.10, perl v5.30.0, but probably works on most Linux machines with python>=3.5
 
 ## Installation
-1. Install the symmetry breaking tool Shatter v0.3, last known to be available [here](http://www.aloul.net/Tools/shatter/)
+1. Install the symmetry breaking tool Shatter v0.3, last known to be available [here](http://www.aloul.net/Tools/shatter/).
 2. Clone this repo
+3. In the script `shatter_1_3.pl`, you will need to modify the variables `$cnf2gap` and `$gat` to reflect the absolute paths to the `cnf2gap` and `saucy` executables from your installation in step 1
 
 ## Usage
 The command to run is:
