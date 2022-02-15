@@ -2,6 +2,7 @@
 # read in a .cnf.txt from shatter and produce symmetry breaking clauses that do NOT introduce new solutions
 import re
 import sys
+import os
 import subprocess
 
 # parse the .cnf.txt file
@@ -126,7 +127,8 @@ def output_clauses(clauses):
         print(' '.join([str(x) for x in clause]) + ' 0')
 
 def main(cnfname, outname, clauses_outname):
-    subprocess.run(['perl', 'shatter_1_3.pl', f'{cnfname}']) # generate the .cnf.txt file with symmetry info
+    perl_script = os.path.realpath(__file__).replace('process_symms.py', 'shatter_1_3.pl')
+    subprocess.run(['perl', f'{perl_script}', f'{cnfname}']) # generate the .cnf.txt file with symmetry info
     with open(cnfname, 'r') as f:
         cnf_lines = f.readlines()
     header = cnf_lines[0].split(' ')
